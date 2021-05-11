@@ -1,4 +1,3 @@
-
 class Person:
     def __init__(self,name,age,spouse = None,children = []):
         self.name = name
@@ -16,6 +15,3 @@ class Child(Person):
     def __init__(self,name,age,spouse = None,children = [],parents =[]):
         super().__init__(name,age,spouse,children)
         self.parents = parents
-
-
-
