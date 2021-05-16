@@ -7,7 +7,7 @@ class Student:
     def create(self):
         
         cur_obj=self.con.cursor()
-        cur_obj.execute("create table student (id integer, name text)")
+        cur_obj.execute("create table if not exists student (id integer, name text)")
         
     def query(self):
         cur_obj=self.con.cursor()
@@ -18,4 +18,3 @@ class Student:
         data=cur_obj.fetchall()
         return data
         
-
