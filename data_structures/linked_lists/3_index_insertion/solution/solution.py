@@ -1,25 +1,25 @@
 class Node:
-    def __init__(self, data):        
+    def __init__(self, data=None, next = None):
         self.data = data
-        self.next = None
-        
+        self.next = next
+
+
 class linkedList:
-    def __init__(self, head=None):
+    def init(self, head=None):
         self.head = head
 
-    def insert_at_index(self,index,data):
-        if index == 1:
-            new_node = Node(data)
-            new_node.next = self.head
-            self.head = new_node
+    def insert_at_index(self, index, data):
+        ind = 1
+        n1 = Node(data)
+        if self.head == None:
+            return None
+        else:
+            thisvalue = self.head
+            print('Head --> ', thisvalue.data)
+            while thisvalue.next != None:
+                ind += 1
+                if ind == index:
+                    n1.next = thisvalue.next
+                    thisvalue.next = n1
+                thisvalue = thisvalue.next
 
-        elif index > 1:
-            current = self.head
-            current_index = 1
-            while(current is not None):
-                current_index += 1
-                if(current_index == index):
-                    new_node = Node(data)
-                    current.next.next = current.next
-                    current.next = new_node              
-            current = current.next
